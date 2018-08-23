@@ -8,21 +8,21 @@ if !&compatible
 endif
 
 " set dein directory
-let s:dein_dir = expand('~/.cache/dein')
-let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+let s:dein_dir = expand('~\.cache\dein')
+let s:dein_repo_dir = s:dein_dir . '\repos\github.com\Shougo\dein.vim'
 
 " if dein is not installed, install dein
 if &runtimepath !~# '/dein.vim'
   if !isdirectory(s:dein_repo_dir)
     execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
   endif
-  execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
+  execute 'set runtimepath^=' . s:dein_repo_dir
 endif
 
 " toml file
-let g:rc_dir = expand('~/.vim/rc')
-let s:toml = g:rc_dir . '/dein.toml'
-let s:toml_lazy = g:rc_dir . '/dein_lazy.toml'
+let g:rc_dir = expand('~\vimfiles\rc')
+let s:toml = g:rc_dir . '\dein.toml'
+let s:toml_lazy = g:rc_dir . '\dein_lazy.toml'
 
 " dein setting start
 if dein#load_state(s:dein_dir)
@@ -105,8 +105,7 @@ set hidden            " change buffer without saving
 set mouse=a           " enable mouse
 
 " python path related
-let g:python2_host_prog = expand('~/') . '.pyenv/versions/2.7.14/bin/python'
-let g:python3_host_prog = expand('~/') . '.pyenv/versions/3.6.4/bin/python'
+let g:python3_host_prog = expand('~\') . 'AppData\Local\Programs\Python\Python36\python.exe'
 " }}}
 
 "------------------------------------
@@ -136,7 +135,7 @@ nnoremap <C-b> <Nop>
 nnoremap <leader>e :e!<CR>
 
 " reload vimrc
-nnoremap <leader>R :source ~/.vimrc<CR>
+nnoremap <leader>R :source ~\_vimrc<CR>
 
 " D like yank function
 nnoremap Y y$
@@ -149,9 +148,4 @@ nnoremap <C-w>\| :<C-u>vs<CR>
 nnoremap <silent>tt :tabnew<CR>
 nnoremap <silent>th gT
 nnoremap <silent>tl gt
-
-" share clipboard
-if $OS == "win"
-    vmap <silent><leader>y :w !xsel -ib<CR><CR>
-endif
 " }}}
