@@ -6,7 +6,7 @@ My dotfiles (zsh + tmux 2.6 + vim 8 or nvim)
 
 ## How-to-install (for Windows)
 
-1. Get Nerd fonts from <https://github.com/ryanoasis/nerd-fonts>
+1. Get Cica fonts <https://github.com/miiton/Cica>
 2. Install Python 3.5 [download](https://www.python.org/ftp/python/3.5.4/python-3.5.4-amd64.exe)
 
 > - Python version should be 3.5 (predefined by window kaoriya vim)

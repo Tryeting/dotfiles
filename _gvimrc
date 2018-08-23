@@ -2,10 +2,12 @@ source $VIMRUNTIME/delmenu.vim
 set langmenu=ja_jp.utf-8
 source $VIMRUNTIME/menu.vim
 
-set ambiwidth=single
 set belloff=all
-set guifont=Ricty_for_Powerline:h13
 set clipboard=unnamed,autoselect
+
+set guifont=Cica:h16
+set ambiwidth=double
+set rop=type:directx,renmode:5
 
 set guioptions-=m
 set guioptions-=T
