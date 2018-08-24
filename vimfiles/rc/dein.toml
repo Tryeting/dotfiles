@@ -26,17 +26,6 @@ hook_add = '''
     nmap <Space>gc :Gcommit<CR>
     nmap <Space>gr :Gread<CR>
 '''
-
-[[plugins]]
-repo = 'airblade/vim-gitgutter'
-hook_add = '''
-    nmap <Space>h :GitGutterLineHighlightsToggle<CR>
-    set signcolumn=yes
-    set updatetime=100
-    let g:gitgutter_sign_added = '+'
-    let g:gitgutter_sign_modified = '-'
-    let g:gitgutter_sign_removed = 'x'
-'''
 # }}}
 
 #############################
