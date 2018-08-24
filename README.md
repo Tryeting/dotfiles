@@ -19,8 +19,8 @@ My dotfiles for vim-kaoriya in windows
 pip install neovim jedi flake8 pycodestyle autopep8
 ```
 
-5. (a) Copy `_vimrc` & `_gvimrc` & `vimfiles` to `$HOME` (default `$HOME` is `C:\Users\<user_name>`)
-5. (b) Make symbolic link via `mklink` command in command prompt
+5. (a) Copy `_vimrc` & `_gvimrc` & `vimfiles` to `$HOME` (default `$HOME` is `C:\Users\<user_name>`).
+(b) Make symbolic link via `mklink` command in command prompt
 
 ```
 mklink C:\Users\<user_name>\_gvimrc C:\Users\<user_name>\dotfiles\_gvimrc
