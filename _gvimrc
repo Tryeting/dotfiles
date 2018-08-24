@@ -6,7 +6,7 @@ set belloff=all
 set clipboard=unnamed,autoselect
 
 colorscheme jellybeans
-set guifont=Cica:h16
+set guifont=Cica:h14
 set ambiwidth=double
 set rop=type:directx,renmode:5
 
