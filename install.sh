@@ -4,6 +4,36 @@
 # Copyright 2018 Tomoki Hayashi
 set -e
 
+# check OS
+if [ "$(uname)" == 'Darwin' ]; then
+  OS='Mac'
+elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
+  OS='Linux'
+elif [ "$(expr substr $(uname -s) 1 10)" == 'MINGW32_NT' ]; then                                                                                           
+  OS='Cygwin'
+else
+  echo "Your platform ($(uname -a)) is not supported."
+  exit 1
+fi
+
+if [ $OS = "Mac" ]; then
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    xcode-select --install
+    brew bundle install
+fi
+
+
+# clone and install nerd-fonts
+nerd_fonts() {
+  git clone --branch=master --depth 1 https://github.com/ryanoasis/nerd-fonts.git
+  cd nerd-fonts
+  ./install.sh $1  # "Source" to install Sauce Code Nerd Font
+  cd ..
+  rm -rf nerd-fonts
+}
+
+nerd_fonts Source
+
 # check pyenv existence
 if ! type "pyenv" > /dev/null 2>&1;then
     echo "ERROR: pyenv is not activated."
